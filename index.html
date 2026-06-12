@@ -168,18 +168,15 @@ async function sendMessage(){
         document.getElementById("loading")?.remove();
 
         if(data.candidates){
-            const reply =
-                data.candidates[0].content.parts[0].text;
-
-            addMessage(reply, "bot");
-        }
-        else{
-            console.log(data);
-            addMessage(
-                "API Error. Check your Gemini API key.",
-                "bot"
-            );
-        }
+    const reply = data.candidates[0].content.parts[0].text;
+    addMessage(reply, "bot");
+}
+else{
+    addMessage(
+        JSON.stringify(data, null, 2),
+        "bot"
+    );
+}
 
     }catch(error){
 
