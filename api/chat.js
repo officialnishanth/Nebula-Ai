@@ -2,7 +2,7 @@
 // The API key here is read from an environment variable,
 // so it is never visible to anyone viewing your site.
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
 // Only allow POST requests
 if (req.method !== "POST") {
 return res.status(405).json({ error: "Method not allowed" });
